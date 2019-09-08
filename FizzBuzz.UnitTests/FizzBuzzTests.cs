@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace FizzBuzz.UnitTests
 {
@@ -40,5 +41,11 @@ namespace FizzBuzz.UnitTests
             Assert.AreEqual(output[14], "FizzBuzz");
         }
 
+        [Test]
+        public void ShouldHandleInvalidInput()
+        {
+            Assert.Throws<InvalidOperationException>(() => _fizzBuzz.Calculate(-2));
+            Assert.Throws<InvalidOperationException>(() => _fizzBuzz.Calculate(-0));
+        }
     }
 }

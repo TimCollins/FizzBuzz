@@ -1,9 +1,16 @@
-﻿namespace FizzBuzz.App
+﻿using System;
+
+namespace FizzBuzz.App
 {
     public class FizzBuzz
     {
         public string[] Calculate(int max)
         {
+            if (max < 1)
+            {
+                throw new InvalidOperationException("Input must be greater than zero.");
+            }
+
             var output = new string[max];
 
             for (var i = 0; i < max; i++)
