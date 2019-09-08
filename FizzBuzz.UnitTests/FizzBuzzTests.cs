@@ -5,12 +5,18 @@ namespace FizzBuzz.UnitTests
     [TestFixture]
     public class FizzBuzzTests
     {
+        private App.FizzBuzz _fizzBuzz;
+
+        [SetUp]
+        public void Setup()
+        {
+            _fizzBuzz = new App.FizzBuzz();
+        }
+
         [Test]
         public void ShouldOutputFizzForNumbersDivisibleBy3()
         {
-            var fizzBuzz = new App.FizzBuzz();
-
-            var output = fizzBuzz.Calculate(9);
+            var output = _fizzBuzz.Calculate(9);
 
             Assert.AreEqual(output[2], "Fizz");
             Assert.AreEqual(output[5], "Fizz");
@@ -20,9 +26,7 @@ namespace FizzBuzz.UnitTests
         [Test]
         public void ShouldOutputBuzzForNumbersDivisibleBy5()
         {
-            var fizzBuzz = new App.FizzBuzz();
-
-            var output = fizzBuzz.Calculate(10);
+            var output = _fizzBuzz.Calculate(10);
 
             Assert.AreEqual(output[4], "Buzz");
             Assert.AreEqual(output[9], "Buzz");
@@ -31,11 +35,10 @@ namespace FizzBuzz.UnitTests
         [Test]
         public void ShouldOutputFizzBuzzForNumbersDivisibleByBoth3And5()
         {
-            var fizzBuzz = new App.FizzBuzz();
-
-            var output = fizzBuzz.Calculate(15);
+            var output = _fizzBuzz.Calculate(15);
 
             Assert.AreEqual(output[14], "FizzBuzz");
         }
+
     }
 }
