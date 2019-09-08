@@ -19,9 +19,9 @@ namespace FizzBuzz.UnitTests
         {
             var output = _fizzBuzz.Calculate(9);
 
-            Assert.AreEqual(output[2], "Fizz");
-            Assert.AreEqual(output[5], "Fizz");
-            Assert.AreEqual(output[8], "Fizz");
+            Assert.AreEqual(output[2], App.Constants.Fizz);
+            Assert.AreEqual(output[5], App.Constants.Fizz);
+            Assert.AreEqual(output[8], App.Constants.Fizz);
         }
 
         [Test]
@@ -29,8 +29,8 @@ namespace FizzBuzz.UnitTests
         {
             var output = _fizzBuzz.Calculate(10);
 
-            Assert.AreEqual(output[4], "Buzz");
-            Assert.AreEqual(output[9], "Buzz");
+            Assert.AreEqual(output[4], App.Constants.Buzz);
+            Assert.AreEqual(output[9], App.Constants.Buzz);
         }
 
         [Test]
@@ -38,7 +38,7 @@ namespace FizzBuzz.UnitTests
         {
             var output = _fizzBuzz.Calculate(15);
 
-            Assert.AreEqual(output[14], "FizzBuzz");
+            Assert.AreEqual(output[14], App.Constants.FizzBuzz);
         }
 
         [Test]

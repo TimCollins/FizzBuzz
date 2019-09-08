@@ -25,17 +25,17 @@ namespace FizzBuzz.App
         {
             if (i % 3 == 0 && i % 5 == 0)
             {
-                return "FizzBuzz";
+                return Constants.FizzBuzz;
             }
 
             if (i % 3 == 0)
             {
-                return "Fizz";
+                return Constants.Fizz;
             }
 
             if (i % 5 == 0)
             {
-                return "Buzz";
+                return Constants.Buzz;
             }
 
             return i.ToString();
