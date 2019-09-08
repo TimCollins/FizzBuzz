@@ -16,5 +16,26 @@ namespace FizzBuzz.UnitTests
             Assert.AreEqual(output[5], "Fizz");
             Assert.AreEqual(output[8], "Fizz");
         }
+
+        [Test]
+        public void ShouldOutputBuzzForNumbersDivisibleBy5()
+        {
+            var fizzBuzz = new App.FizzBuzz();
+
+            var output = fizzBuzz.Calculate(10);
+
+            Assert.AreEqual(output[4], "Buzz");
+            Assert.AreEqual(output[9], "Buzz");
+        }
+
+        [Test]
+        public void ShouldOutputFizzBuzzForNumbersDivisibleByBoth3And5()
+        {
+            var fizzBuzz = new App.FizzBuzz();
+
+            var output = fizzBuzz.Calculate(15);
+
+            Assert.AreEqual(output[14], "FizzBuzz");
+        }
     }
 }
